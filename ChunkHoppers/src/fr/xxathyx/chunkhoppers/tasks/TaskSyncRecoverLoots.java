@@ -29,7 +29,9 @@ public class TaskSyncRecoverLoots extends BukkitRunnable {
 
         for (int i = 0; i < chunk.getTileEntities().length; i++) {        	
             if (chunk.getTileEntities()[i] instanceof Hopper) {
-                hopper = (Hopper) chunk.getTileEntities()[i];
+		if (chunk.getTileEntities()[i].getInventory().getName().equals(configuration.getItemName())) {
+                	hopper = (Hopper) chunk.getTileEntities()[i];
+		}
             }
         }
 		
